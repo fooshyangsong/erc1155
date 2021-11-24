@@ -75,7 +75,7 @@ contract MYERC1155Tradable is ERC1155, Ownable {
   ) override public view returns (bool isOperator) {
     // Whitelist OpenSea proxy contract for easy trading.
     // ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);
-    if (_owner == proxyRegistryAddress) {
+    if (_operator == proxyRegistryAddress) {
       return true;
     }
 

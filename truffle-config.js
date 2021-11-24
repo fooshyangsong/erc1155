@@ -56,8 +56,7 @@ module.exports = {
       ),
       network_id: 4,
       from: process.env.WALLET_UAT,
-      // gas: 4500000,
-      gasPrice: 10000000000,
+      gas: 6000000
     },
     bsctest: {
       provider: () => new HDWalletProvider(
@@ -131,7 +130,9 @@ module.exports = {
     }
   },
 
-
+  plugins: [
+    'truffle-plugin-verify'
+  ],
   api_keys: {
     etherscan: process.env.ETHERSCAN_API_KEY,
     bscscan: process.env.BSCSCAN_API_KEY

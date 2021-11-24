@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
-const IMBA1155 = artifacts.require("IMBA1155.sol");
-const IMBA = artifacts.require("IMBA.sol");
+// const IMBA1155 = artifacts.require("IMBA1155.sol");
+// const IMBA = artifacts.require("IMBA.sol");
+const IMBANFT = artifacts.require("IMBANFT.sol");
 
 //accounts is arrays of address which we use to sign our transaction
 module.exports = async function (deployer, network, accounts) {
@@ -12,15 +13,14 @@ module.exports = async function (deployer, network, accounts) {
     proxyRegistryAddress = "0xEe40cBdDC0EA15535940b01C03fCD96111A2646a";
   }
 
-  deployer.deploy(IMBA1155);
+  deployer.deploy(IMBANFT);
 
-  await deployer.deploy(
-    IMBA,
-    proxyRegistryAddress,
-    { gas: 109720 }
-  );
-
-
+  // await deployer.deploy(
+  //   IMBA,
+  //   proxyRegistryAddress,
+  //   { gas: 6000000 }
+  // );
+  
     // const [admin, _] = accounts;
   
     // if(network === 'bscTestnet' || network === 'rinkeby') {
